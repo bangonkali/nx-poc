@@ -8,7 +8,12 @@ on:
 
 jobs:
   main:
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
       - name: Setup Repo
         uses: actions/checkout@v4
