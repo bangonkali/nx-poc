@@ -1,4 +1,10 @@
 import { createRoot } from 'react-dom/client';
+import { PocReactSharedComponents } from '@poc/poc-react-shared-components';
 
-const root = createRoot(document.body);
-root.render(<h2>Hello from React!</h2>);
+const container = document.getElementById('react-content')!;
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(
+  <div>
+    <PocReactSharedComponents />
+  </div>
+);
