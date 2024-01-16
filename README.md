@@ -23,6 +23,9 @@ npx nx run-many -t build
 
 # Create a shared react component library
 nx g @nx/react:library lib/poc-react-shared-components --appProject=poc-react-app-alpha
+
+# Create an electron forge application on apps
+npm init electron-app@latest poc-electron-forge-react -- --template=vite-typescript
 ```
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
