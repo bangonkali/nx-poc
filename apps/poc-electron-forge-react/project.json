@@ -4,6 +4,12 @@
   "sourceRoot": "apps/poc-electron-forge-react/src",
   "projectType": "application",
   "targets": {
+    "make": {
+      "executor": "nx:run-script",
+      "options": {
+          "script": "make"
+      }
+    },
     "build": {
       "executor": "nx:run-script",
       "options": {
