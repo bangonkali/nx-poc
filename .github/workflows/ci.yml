@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main:
+    runs-on: windows-latest
+    steps:
+      - name: Setup Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: NPM Install on Root
+        run: npm install
+
+      - name: NPM Install on Electron Forge
+        run: npm install
+        working-directory: apps/poc-electron-forge-react
+
+      - name: Build All
+        run: npx nx run-many -t build
