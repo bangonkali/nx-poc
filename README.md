@@ -26,6 +26,10 @@ nx g @nx/react:library lib/poc-react-shared-components --appProject=poc-react-ap
 
 # Create an electron forge application on apps
 npm init electron-app@latest poc-electron-forge-react -- --template=vite-typescript
+
+# Add react-dom and react types to electron forge project
+npm install --save react react-dom
+npm install --save-dev @types/react @types/react-dom
 ```
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
