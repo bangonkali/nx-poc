@@ -1,10 +1,24 @@
+/// <reference types='vitest' />
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
-// https://vitejs.dev/config
 export default defineConfig({
+  root: __dirname,
   resolve: {
-    // Some libs that can run in both Web and Node.js, such as `axios`, we need to tell Vite to build them in Node.js.
-    browserField: false,
     mainFields: ['module', 'jsnext:main', 'jsnext'],
+  },
+  plugins: [react(), nxViteTsPaths()],
+
+  // Uncomment this if you are using workers.
+  // worker: {
+  //  plugins: [ nxViteTsPaths() ],
+  // },
+
+  build: {
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
   },
 });
