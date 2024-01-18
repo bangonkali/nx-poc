@@ -12,6 +12,8 @@ export function App() {
     <div>
       <NxWelcome title="poc-react-app-alpha" />
 
+      Alpha 
+      
       <PocReactSharedComponents />
 
       {/* START: routes */}
