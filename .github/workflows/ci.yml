@@ -29,9 +29,13 @@ jobs:
       - name: NPM Install on Root
         run: npm install
 
-      - name: NPM Install on Electron Forge
+      - name: NPM Install on Electron Forge React
         run: npm install
         working-directory: apps/poc-electron-forge-react
+
+      - name: NPM Install on Electron Forge Embed
+        run: npm install
+        working-directory: apps/poc-electron-forge-embed
 
       - name: Build All
         run: npx nx run-many -t build
