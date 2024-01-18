@@ -1,0 +1,33 @@
+{
+  "name": "poc-electron-forge-embed",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/poc-electron-forge-embed/src",
+  "projectType": "application",
+  "targets": {
+    "make": {
+      "executor": "nx:run-script",
+      "options": {
+          "script": "make"
+      }
+    },
+    "build": {
+      "executor": "nx:run-script",
+      "options": {
+          "script": "package"
+      }
+    },
+    "preview": {
+      "executor": "nx:run-script",
+      "options": {
+          "script": "start"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-script",
+      "options": {
+          "script": "lint"
+      }
+    }
+  },
+  "tags": []
+}
