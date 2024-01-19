@@ -4,6 +4,16 @@
   "sourceRoot": "lib/poc-plain-js-esbuild/src",
   "projectType": "library",
   "targets": {
+    "prebuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "ts-node lib/poc-plain-js-esbuild/prebuild.ts"
+          }
+        ]
+      }
+    },
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
@@ -12,9 +22,19 @@
         "main": "lib/poc-plain-js-esbuild/src/index.ts",
         "tsConfig": "lib/poc-plain-js-esbuild/tsconfig.lib.json",
         "assets": ["lib/poc-plain-js-esbuild/*.md"],
-        "generatePackageJson": true,
-        "format": ["cjs"]
-      }
+        "format": ["esm"],
+        "esbuildOptions": {
+          "define": {
+            "import.meta.env.INSTANCE": "asdfasdf"
+          }
+        }
+      },
+      "dependsOn": [
+        {
+          "target": "prebuild",
+          "projects": "self"
+        }
+      ]
     },
     "lint": {
       "executor": "@nx/eslint:lint",
