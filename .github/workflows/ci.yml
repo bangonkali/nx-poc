@@ -39,3 +39,5 @@ jobs:
 
       - name: Build All
         run: npx nx run-many -t build
+        env:
+          VITE_INSTANCE: ${{ vars.VITE_INSTANCE }}
