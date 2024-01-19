@@ -7,25 +7,31 @@
     "make": {
       "executor": "nx:run-script",
       "options": {
-          "script": "make"
+        "script": "make"
       }
     },
     "build": {
       "executor": "nx:run-script",
       "options": {
-          "script": "package"
-      }
+        "script": "package"
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "poc-react-app-alpha"
+        }
+      ]
     },
     "preview": {
       "executor": "nx:run-script",
       "options": {
-          "script": "start"
+        "script": "start"
       }
     },
     "lint": {
       "executor": "nx:run-script",
       "options": {
-          "script": "lint"
+        "script": "lint"
       }
     }
   },
