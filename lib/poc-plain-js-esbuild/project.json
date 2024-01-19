@@ -1,0 +1,25 @@
+{
+  "name": "poc-plain-js-esbuild",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "lib/poc-plain-js-esbuild/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/lib/poc-plain-js-esbuild",
+        "main": "lib/poc-plain-js-esbuild/src/index.ts",
+        "tsConfig": "lib/poc-plain-js-esbuild/tsconfig.lib.json",
+        "assets": ["lib/poc-plain-js-esbuild/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}

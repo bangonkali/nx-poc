@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@poc/poc-plain-js-esbuild": ["lib/poc-plain-js-esbuild/src/index.ts"],
       "@poc/poc-react-shared-components": [
         "lib/poc-react-shared-components/src/index.ts"
       ]

@@ -30,6 +30,11 @@ npm init electron-app@latest poc-electron-forge-react -- --template=vite-typescr
 # Add react-dom and react types to electron forge project
 npm install --save react react-dom
 npm install --save-dev @types/react @types/react-dom
+
+# Add libraries
+npx nx g @nx/js:lib lib/poc-plain-js-vite --bundler=vite
+npx nx g @nx/js:lib lib/poc-plain-js-esbuild --bundler=esbuild
+npx nx g @nx/js:lib lib/poc-plain-js-tsc-mix --bundler=tsc
 ```
 
 ## Electron

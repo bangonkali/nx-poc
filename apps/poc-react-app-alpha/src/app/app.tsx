@@ -1,17 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
-
-import NxWelcome from './nx-welcome';
-
 import { Route, Routes, Link } from 'react-router-dom';
-
 import { PocReactSharedComponents } from '@poc/poc-react-shared-components';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="poc-react-app-alpha" />
-
       Alpha 
       
       <PocReactSharedComponents />
