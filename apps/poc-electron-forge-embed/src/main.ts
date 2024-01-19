@@ -1,9 +1,15 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Notification } from 'electron';
+import { pocPlainJsEsbuild, getNotificationTitle } from '@poc/poc-plain-js-esbuild';
 import path from 'path';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
+}
+
+// Just a simple demo showing we can also import from an es build plain js dependency
+function showNotification() {
+  new Notification({ title: getNotificationTitle(), body: pocPlainJsEsbuild() }).show()
 }
 
 const createWindow = () => {
@@ -14,7 +20,10 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+    title: pocPlainJsEsbuild(),
   });
+
+  showNotification();
 
   // and load the index.html of the app.
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
