@@ -35,6 +35,12 @@ npm install --save-dev @types/react @types/react-dom
 npx nx g @nx/js:lib lib/poc-plain-js-vite --bundler=vite
 npx nx g @nx/js:lib lib/poc-plain-js-esbuild --bundler=esbuild
 npx nx g @nx/js:lib lib/poc-plain-js-tsc-mix --bundler=tsc
+
+# Android
+$env:ANDROID_HOME="C:\Users\Bangonkali\AppData\Local\Android\Sdk"
+$env:JAVA_HOME="D:\Libs\microsoft-jdk-17.0.9-windows-x64\jdk-17.0.9+8"
+
+npx nx g @nx/express:app apps/poc-api --bundler=vite
 ```
 
 ## Electron
